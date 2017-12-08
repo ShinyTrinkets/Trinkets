@@ -5,24 +5,26 @@
   "bin": {
     "trinkets": "./lib/cli.js"
   },
+  "bugs": {
+    "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
+  },
   "dependencies": {
     "string": "3.x"
   },
   "description": "Software automation made for Humans™",
   "devDependencies": {
-    "mocha": "4.x",
+    "ava": "^0.24.0",
     "prettier": "1.8.2",
-    "should": "13.x",
     "standard": "10.0.3"
   },
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=8.0.0"
   },
   "keywords": [
     "cli",
     "automation"
   ],
-  "license": "MPL",
+  "license": "MPL-2.0",
   "main": "lib/",
   "name": "trinkets",
   "overrides": [
@@ -42,8 +44,8 @@
   "scripts": {
     "format": "npx prettier --write lib/*.js && npx standard --fix lib/**.js",
     "lint": "npx standard lib/**.js",
-    "start": "micro server.js",
-    "test": "npx mocha $(find . -name './test/*.test.js')"
+    "start": "npx micro server.js",
+    "test": "npx ava --fail-fast --verbose test/*.test.js"
   },
   "version": "0.0.1"
 }
