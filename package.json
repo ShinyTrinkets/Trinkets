@@ -1,0 +1,49 @@
+{
+  "authors": [
+    "Cristi Constantin <cristi.constantin@live.com>"
+  ],
+  "bin": {
+    "trinkets": "./lib/cli.js"
+  },
+  "dependencies": {
+    "string": "3.x"
+  },
+  "description": "Software automation made for Humans™",
+  "devDependencies": {
+    "mocha": "4.x",
+    "prettier": "1.8.2",
+    "should": "13.x",
+    "standard": "10.0.3"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "keywords": [
+    "cli",
+    "automation"
+  ],
+  "license": "MPL",
+  "main": "lib/",
+  "name": "trinkets",
+  "overrides": [
+    {
+      "files": "lib/*.js",
+      "options": {
+        "printWidth": 120,
+        "semi": false,
+        "singleQuote": true
+      }
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ShinyTrinkets/Trinkets.git"
+  },
+  "scripts": {
+    "format": "npx prettier --write lib/*.js && npx standard --fix lib/**.js",
+    "lint": "npx standard lib/**.js",
+    "start": "micro server.js",
+    "test": "npx mocha $(find . -name './test/*.test.js')"
+  },
+  "version": "0.0.1"
+}
