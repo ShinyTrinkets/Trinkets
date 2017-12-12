@@ -9,6 +9,8 @@
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
   },
   "dependencies": {
+    "fs-extra": "5.x",
+    "globby": "7.x",
     "string": "3.x"
   },
   "description": "Software automation made for Humans™",
@@ -44,8 +46,7 @@
   "scripts": {
     "format": "npx prettier --write lib/*.js && npx standard --fix lib/**.js",
     "lint": "npx standard lib/**.js",
-    "start": "npx micro server.js",
     "test": "npx ava --fail-fast --verbose test/*.test.js"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
