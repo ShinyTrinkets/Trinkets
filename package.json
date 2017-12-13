@@ -10,12 +10,16 @@
   },
   "dependencies": {
     "fs-extra": "5.x",
+    "glob-watcher": "4.x",
     "globby": "7.x",
+    "minimist": "1.x",
+    "minimist-options": "3.x",
+    "node-cron": "1.x",
     "string": "3.x"
   },
   "description": "Software automation made for Humans™",
   "devDependencies": {
-    "ava": "^0.24.0",
+    "ava": "*",
     "prettier": "1.8.2",
     "standard": "10.0.3"
   },
