@@ -1,18 +1,16 @@
 
 # Hello timer 🕰
 
-Today is a nice day.
+Today is a nice day...
 
 ```js
-function trigger () {
-  console.log('Started Timer')
-}
+trigger('timer', '*/10 * * * * *', actions)
 ```
 
 Tomorrow will be even nicer.
 
 ```js
-function action (initial_value) {
+function actions (initial_value) {
   console.log('Action ::', initial_value)
 }
 ```

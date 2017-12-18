@@ -1,5 +1,5 @@
 
-# ⚙ Trinkets
+# ⚙ Trinkets 🔩
 
   [![API stability][stability-img]][stability-url]
   [![Standard Style Guide][style-img]][style-url]

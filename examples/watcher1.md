@@ -2,13 +2,16 @@
 # I am watching files and folders 🗄
 
 ```js
-var trigger = function () {}
+trigger('watcher', ['./test/*.js'], actions)
+console.log('W1: Watching for test files ...')
 ```
 
 ### How lovely
 
 ```js
-var action = function () {}
+function actions (path) {
+  console.log('File changed ::', path)
+}
 ```
 
 ## This is good bye
