@@ -9,14 +9,14 @@
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
   },
   "dependencies": {
+    "chokidar": "1.x",
     "del": "3.x",
     "fs-extra": "5.x",
-    "glob-watcher": "4.x",
     "globby": "7.x",
     "minimist": "1.x",
     "minimist-options": "3.x",
     "node-cron": "1.x",
-    "string": "3.x"
+    "signal-exit": "3.x",
     "trash": "4.x"
   },
   "description": "Software automation made for Humans™",
