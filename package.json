@@ -13,16 +13,19 @@
     "del": "3.x",
     "fs-extra": "5.x",
     "globby": "7.x",
+    "lowdb": "1.x",
     "minimist": "1.x",
     "minimist-options": "3.x",
     "node-cron": "1.x",
+    "pino": "4.x",
     "signal-exit": "3.x",
-    "trash": "4.x"
+    "trash": "4.x",
+    "voca": "1.x"
   },
   "description": "Software automation made for Humans™",
   "devDependencies": {
     "ava": "*",
-    "prettier": "1.9.2",
+    "prettier": "1.10.2",
     "standard": "10.0.3"
   },
   "engines": {
