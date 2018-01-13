@@ -15,11 +15,19 @@ test('extracting json and yaml blocks correctly', async t => {
 })
 
 test('parsing js and json text correctly', async t => {
-  const txt = '\n# Hello\n\n```json // const x =\n{"a": 1, "b": 2}\n```\n\nSomething in between\n\n```js\nyes = true\n```\n\n## Good bye\n'
+  const txt = '\n# Hello !\n\n```json // const x =\n{"a": 1, "b": 2}\n```\n\nSomething in between\n\n```js\nyes = true\n```\n\n## Good bye\n'
   const blks = parse.extractBlocks(txt)
   t.deepEqual(blks, ['json // const x =\n{"a": 1, "b": 2}', 'js\nyes = true'])
   const c = await parse.convertText(txt)
   t.is(c, 'const x = {"a": 1, "b": 2}\n\nyes = true')
+})
+
+test('parsing js and yaml text correctly', async t => {
+  const txt = '\n# Hello ?\n\n```js\nfunction () {\n  return x.a && x.b\n}\n```\n\nSomething in between\n\n```yaml // const x =\na: 1\nb: 2\n```\n\n## Good bye\n'
+  const blks = parse.extractBlocks(txt)
+  t.deepEqual(blks, ['js\nfunction () {\n  return x.a && x.b\n}', 'yaml // const x =\na: 1\nb: 2'])
+  const c = await parse.convertText(txt)
+  t.is(c, 'function () {\n  return x.a && x.b\n}\n\nconst x = {\n  "a": 1,\n  "b": 2\n}')
 })
 
 test('parsing timer MD files correctly', async t => {
