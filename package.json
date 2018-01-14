@@ -13,6 +13,7 @@
     "del": "3.x",
     "fs-extra": "5.x",
     "globby": "7.x",
+    "js-yaml": "3.x",
     "lowdb": "1.x",
     "minimist": "1.x",
     "minimist-options": "3.x",
@@ -40,7 +41,7 @@
   "name": "trinkets",
   "overrides": [
     {
-      "files": "lib/**/*.js",
+      "files": "lib/*.js",
       "options": {
         "printWidth": 120,
         "semi": false,
