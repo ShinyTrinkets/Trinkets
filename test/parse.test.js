@@ -3,9 +3,15 @@ import test from 'ava'
 import parse from '../lib/parse'
 
 test('extracting meta headers', t => {
-  const txt = '---\ntrinkets: true\nid: test1\ndb: true\n---\n\n# Hello\n\n'
+  const txt = '---\nTrinkets: true\nid: test1\nDB: true\n---\n\n# Hello\n\n'
   const [meta, body] = parse.extractMeta(txt)
-  t.deepEqual(meta, { trinkets: true, id: 'test1', db: true })
+  t.deepEqual(meta, {
+    Trinkets: true,
+    trinkets: true,
+    id: 'test1',
+    DB: true,
+    db: true
+  })
   t.is(body, '\n\n# Hello\n\n')
 })
 
