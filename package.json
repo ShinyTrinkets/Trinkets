@@ -19,6 +19,7 @@
     "minimist-options": "3.x",
     "node-cron": "1.x",
     "pino": "4.x",
+    "pino-multi-stream": "3.x",
     "signal-exit": "3.x",
     "trash": "4.x",
     "voca": "1.x"
