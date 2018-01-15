@@ -1,9 +1,12 @@
+---
+trinkets: true
+---
 
 # I am watching files and folders 🗄
 
 ```js
 trigger('watcher', ['./test/*.js'], actions)
-console.log('W1: Watching for test files ...')
+console.log('W1: Watching all test files ...')
 ```
 
 ### How lovely
@@ -14,4 +17,4 @@ function actions (path) {
 }
 ```
 
-## This is good bye
+## This is good bye 🛌

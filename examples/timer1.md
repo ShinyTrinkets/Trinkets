@@ -1,3 +1,6 @@
+---
+trinkets: true
+---
 
 # Hello timer 🕰
 
