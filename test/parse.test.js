@@ -28,9 +28,10 @@ test('extracting json and yaml blocks correctly', t => {
 })
 
 test('parsing js and json text correctly', async t => {
-  const txt = '\n# Hello !\n\n```json // const x =\n{"a": 1, "b": 2}\n```\n\nSomething in between\n\n```js\nyes = true\n```\n\n## Good bye\n'
+  // block types should be case insensitive
+  const txt = '\n# Hello !\n\n```Json // const x =\n{"a": 1, "b": 2}\n```\n\nSomething in between\n\n```JS\nyes = true\n```\n\n## Good bye\n'
   const blks = parse.extractBlocks(txt)
-  t.deepEqual(blks, ['json // const x =\n{"a": 1, "b": 2}', 'js\nyes = true'])
+  t.deepEqual(blks, ['Json // const x =\n{"a": 1, "b": 2}', 'JS\nyes = true'])
   const c = parse.convertBlocks(txt)
   t.is(c, 'const x = {"a": 1, "b": 2};\n\nyes = true;')
 })
