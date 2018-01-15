@@ -54,9 +54,9 @@
     "url": "git://github.com/ShinyTrinkets/Trinkets.git"
   },
   "scripts": {
-    "format": "npx prettier --write lib/**/*.js && npx standard --fix lib/**/*.js",
+    "format": "npx prettier --write lib/*.js && npx standard --fix lib/*.js",
     "lint": "npx standard lib/**/*.js",
     "test": "npx ava --fail-fast --verbose test/*.test.js"
   },
-  "version": "0.0.2"
+  "version": "0.0.3"
 }

@@ -4,7 +4,8 @@
 Today is a nice day...
 
 ```js
-trigger('timer', '*/10 * * * * *', actions)
+// Every 30 seconds, run actions
+trigger('timer', '*/30 * * * * *', actions)
 ```
 
 Tomorrow will be even nicer.
