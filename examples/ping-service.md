@@ -1,6 +1,6 @@
 ---
-trinkets: false
 id: ping-service
+trinkets: true
 log: true
 db: true
 ---
@@ -19,8 +19,9 @@ duckduckgo.com: [80, 443]
 And this is the actual code that makes the ping-ing:
 
 ```js
+const __ = require('lodash')
 // This library needs to be installed
-const { portCheck } = require('@croqaz/port-scan')
+const { portScan } = require('@croqaz/port-scan')
 
 // Run heart-beat every 10 seconds
 trigger('timer', '*/10 * * * * *', () => log.info('Heartbeat ♥️'))
@@ -28,26 +29,24 @@ trigger('timer', '*/10 * * * * *', () => log.info('Heartbeat ♥️'))
 trigger('timer', '*/30 * * * * *', actions)
 
 async function actions () {
-  for (const host of Object.keys(servers)) {
-    for (const port of servers[host]) {
-      const r = await portCheck({ host, port })
-      if (r > 0) {
-        log.info(`${host}:${port} ✔︎`)
-      } else {
-        log.warn(`${host}:${port} ✘`)
-      }
-      dbSave(host, port, r)
+  for (const [host, ports] of __.entries(servers)) {
+    const resp = await portScan({ host, ports })
+    const ok = __.isEqual(resp, ports)
+    if (ok) {
+      log.info(`${host}:${ports} ✔︎`)
+    } else {
+      log.warn(`${host}:${ports} ✘`)
     }
+    dbSave(host, ports, ok)
   }
 }
 
 // Ensure the ping "table" exists
 db.defaults({ ping: [] }).write()
 
-function dbSave (host, port, ms) {
-  const time = new Date().getTime()
+function dbSave (host, ports, ok) {
   db.get('ping')
-    .push({ host, port, ms, time })
+    .push({ host, ports, ok, time: __.now() })
     .write()
 }
 ```
