@@ -9,8 +9,7 @@
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
   },
   "dependencies": {
-    "chokidar": "1.x",
-    "del": "3.x",
+    "chokidar": "2.x",
     "fs-extra": "5.x",
     "globby": "7.x",
     "js-yaml": "3.x",
@@ -37,6 +36,7 @@
   "keywords": [
     "🔩",
     "cli",
+    "trinkets",
     "automation"
   ],
   "license": "MPL-2.0",
