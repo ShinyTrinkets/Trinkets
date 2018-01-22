@@ -4,16 +4,15 @@
   [![API stability][stability-img]][stability-url]
   [![Standard Style Guide][style-img]][style-url]
 
-
-> **⚠️ &nbsp;WORK IN PROGRESS 🛑**
-
 Node.js experiments.
+
+Stay tuned.
 
 -----
 
 ## License
 
-[MIT](LICENSE) © Cristi Constantin.
+[MPL-2.0](LICENSE) © Cristi Constantin.
 
 
 [stability-img]: https://img.shields.io/badge/stability-experimental-orange.svg?style=flat-square
