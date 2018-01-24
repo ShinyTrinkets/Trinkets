@@ -9,7 +9,7 @@
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
   },
   "dependencies": {
-    "chokidar": "2.x",
+    "@atom/watcher": "0.0.8",
     "fs-extra": "5.x",
     "globby": "7.x",
     "js-yaml": "3.x",
@@ -27,8 +27,10 @@
   "description": "Software automation made for Humans™",
   "devDependencies": {
     "ava": "*",
+    "node-loader": "0.x",
     "prettier": "1.10.2",
-    "standard": "10.0.3"
+    "standard": "10.0.3",
+    "webpack": "3.x"
   },
   "engines": {
     "node": ">=8.0.0"
