@@ -9,15 +9,20 @@
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
   },
   "dependencies": {
-    "@atom/watcher": "0.0.8",
+    "@atom/watcher": "0.0.x",
+    "@babel/core": "^7.0.0-beta.38",
+    "@babel/preset-env": "^7.0.0-beta.38",
+    "emittery": "0.x",
     "fs-extra": "5.x",
     "globby": "7.x",
     "js-yaml": "3.x",
     "lodash": "4.x",
     "lowdb": "1.x",
+    "micromatch": "3.x",
     "minimist": "1.x",
     "minimist-options": "3.x",
     "node-cron": "1.x",
+    "object-path": "0.x",
     "pino": "4.x",
     "pino-multi-stream": "3.x",
     "signal-exit": "3.x",
@@ -44,16 +49,11 @@
   "license": "MPL-2.0",
   "main": "lib/",
   "name": "trinkets",
-  "overrides": [
-    {
-      "files": "lib/*.js",
-      "options": {
-        "printWidth": 120,
-        "semi": false,
-        "singleQuote": true
-      }
-    }
-  ],
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShinyTrinkets/Trinkets.git"
