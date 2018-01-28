@@ -15,6 +15,7 @@
     "emittery": "0.x",
     "fs-extra": "5.x",
     "globby": "7.x",
+    "gray-matter": "3.x",
     "js-yaml": "3.x",
     "lodash": "4.x",
     "lowdb": "1.x",
