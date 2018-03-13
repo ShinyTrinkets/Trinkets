@@ -33,22 +33,22 @@ test('parsing js and json text correctly', async t => {
   const blks = parse.extractBlocks(txt)
   t.deepEqual(blks, ['Json // const x =\n{"a": 1, "b": 2}', 'JS\nyes = true'])
   const c = parse.convertBlocks(txt)
-  t.is(c, 'const x = {"a": 1, "b": 2};\n\nyes = true;')
+  t.is(c, 'const x = {"a": 1, "b": 2};\n\nyes = true;;')
 })
 
 test('parsing js and yaml text correctly', async t => {
-  const txt = '\n# Hello ?\n\n```js\nfunction () {\n  return x.a && x.b\n}\n```\n\nSomething in between\n\n```yaml // const x =\na: 1\nb: 2\n```\n\n## Good bye\n'
+  const txt = '\n# Hello ?\n\n```js\nfunction n() {\n  return x.a && x.b\n}\n```\n\nSomething in between\n\n```yaml // const x =\na: 1\nb: 2\n```\n\n## Good bye\n'
   const blks = parse.extractBlocks(txt)
-  t.deepEqual(blks, ['js\nfunction () {\n  return x.a && x.b\n}', 'yaml // const x =\na: 1\nb: 2'])
+  t.deepEqual(blks, ['js\nfunction n() {\n  return x.a && x.b\n}', 'yaml // const x =\na: 1\nb: 2'])
   const c = parse.convertBlocks(txt)
-  t.is(c, 'function () {\n  return x.a && x.b\n};\n\nconst x = {\n  "a": 1,\n  "b": 2\n};')
+  t.is(c, 'function n() {\n  return x.a && x.b;\n};\n\nconst x = {\n  "a": 1,\n  "b": 2\n};')
 })
 
 test('parsing timer MD files correctly', async t => {
   const txt = '\n# Hello timer 🕰\n\nToday is a nice day...\n\n```js\ntrigger(\'timer\', \'*/20 * * * * *\', actions)\n```\n\nTomorrow will be even nicer.\n\n```js\nfunction actions (initial_value) {\n  console.log(\'Action ::\', initial_value)\n}\n```\n\n## Good bye ⏰\n'
   const c = parse.convertBlocks(txt)
   t.is(c,
-    "trigger('timer', '*/20 * * * * *', actions);\n\n" +
-    'function actions (initial_value) {\n  console.log(\'Action ::\', initial_value)\n};'
+    "trigger('timer', '*/20 * * * * *', actions);;\n\n" +
+    'function actions(initial_value) {\n  console.log(\'Action ::\', initial_value);\n};'
   )
 })

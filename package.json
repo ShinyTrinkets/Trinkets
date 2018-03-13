@@ -3,15 +3,15 @@
     "Cristi Constantin <cristi.constantin@live.com>"
   ],
   "bin": {
-    "trinkets": "./lib/cli.js"
+    "trinkets": "./lib/index.js"
   },
   "bugs": {
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
   },
   "dependencies": {
-    "@atom/watcher": "0.0.x",
-    "@babel/core": "^7.0.0-beta.38",
-    "@babel/preset-env": "^7.0.0-beta.38",
+    "@atom/watcher": "1.x",
+    "@babel/core": "^7.0.0-beta.40",
+    "@babel/preset-env": "^7.0.0-beta.40",
     "emittery": "0.x",
     "fs-extra": "5.x",
     "globby": "7.x",
