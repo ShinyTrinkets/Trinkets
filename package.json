@@ -22,6 +22,7 @@
     "json5": "1.x",
     "lodash": "4.x",
     "lowdb": "1.x",
+    "mem": "3.x",
     "micromatch": "3.x",
     "minimist": "1.x",
     "minimist-options": "3.x",
