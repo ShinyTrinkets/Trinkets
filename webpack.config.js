@@ -3,8 +3,9 @@ module.exports = {
   target: 'node',
   entry: './lib/index.js',
   output: {
-    filename: 'tk.bundle.js'
+    filename: './tk.bundle.js'
   },
+  mode: 'development',
   module: {
     rules: [
       {

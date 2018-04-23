@@ -10,18 +10,22 @@
   },
   "dependencies": {
     "@atom/watcher": "1.x",
-    "@babel/core": "^7.0.0-beta.40",
-    "@babel/preset-env": "^7.0.0-beta.40",
+    "@babel/core": "^7.0.0-beta.44",
+    "@babel/preset-env": "^7.0.0-beta.44",
     "emittery": "0.x",
     "fs-extra": "5.x",
-    "globby": "7.x",
+    "globby": "8.x",
     "gray-matter": "3.x",
+    "hapi": "17.x",
+    "inert": "5.x",
     "js-yaml": "3.x",
+    "json5": "1.x",
     "lodash": "4.x",
     "lowdb": "1.x",
     "micromatch": "3.x",
     "minimist": "1.x",
     "minimist-options": "3.x",
+    "nes": "8.x",
     "node-cron": "1.x",
     "object-path": "0.x",
     "pino": "4.x",
@@ -33,10 +37,12 @@
   "description": "Software automation made for Humans™",
   "devDependencies": {
     "ava": "*",
+    "babel-loader": "7.x",
     "node-loader": "0.x",
-    "prettier": "1.10.2",
-    "standard": "10.0.3",
-    "webpack": "3.x"
+    "prettier": "1.11.1",
+    "standard": "11.0.1",
+    "webpack": "4.x",
+    "webpack-cli": "2.x"
   },
   "engines": {
     "node": ">=8.0.0"
