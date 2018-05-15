@@ -1,18 +1,22 @@
 
+import fs from 'fs'
 import test from 'ava'
-import parse from '../lib/parse'
+import mock from 'mock-fs'
+import proj from '../lib/project'
+import parse from '../lib/code'
 
-test('extracting meta headers', t => {
-  const txt = '---\nTrinkets: true\nid: test1\nDB: true\n---\n\n# Hello\n\n'
-  const [meta, body] = parse.extractMeta(txt)
-  t.deepEqual(meta, {
-    Trinkets: true,
+test('extracting meta headers', async t => {
+  mock({
+    'source.md': '---\ntrinkets: true\nid: test1\ndb: true\n---\n\n# Hello\n\n'
+  })
+  const nfo = await proj.projectInfo('source.md')
+  t.deepEqual(nfo.data, {
     trinkets: true,
     id: 'test1',
-    DB: true,
     db: true
   })
-  t.is(body, '\n\n# Hello\n\n')
+  t.is(nfo.content, '\n# Hello\n\n')
+  mock.restore()
 })
 
 test('extracting a js block correctly', t => {
@@ -32,25 +36,10 @@ test('parsing js and json text correctly', async t => {
   const txt = '\n# Hello !\n\n```Json // const x =\n{"a": 1, "b": 2}\n```\n\nSomething in between\n\n```JS\nyes = true\n```\n\n## Good bye\n'
   const blks = parse.extractBlocks(txt)
   t.deepEqual(blks, ['Json // const x =\n{"a": 1, "b": 2}', 'JS\nyes = true'])
-  const c = parse.convertBlocks(txt)
-  t.is(c, 'const x = {"a": 1, "b": 2};\n\n"use strict";\n\nyes = true;;')
 })
 
 test('parsing js and yaml text correctly', async t => {
   const txt = '\n# Hello ?\n\n```js\nfunction n() {\n  return x.a && x.b\n}\n```\n\nSomething in between\n\n```yaml // const x =\na: 1\nb: 2\n```\n\n## Good bye\n'
   const blks = parse.extractBlocks(txt)
   t.deepEqual(blks, ['js\nfunction n() {\n  return x.a && x.b\n}', 'yaml // const x =\na: 1\nb: 2'])
-  const c = parse.convertBlocks(txt)
-  t.is(c, '"use strict";\n\nfunction n() {\n  return x.a && x.b;\n};\n\nconst x = {\n  "a": 1,\n  "b": 2\n};')
-})
-
-test('parsing timer MD files correctly', async t => {
-  const txt = '\n# Hello timer 🕰\n\nToday is a nice day...\n\n```js\ntrigger(\'timer\', \'*/20 * * * * *\', actions)\n```\n\nTomorrow will be even nicer.\n\n```js\nfunction actions (initial_value) {\n  console.log(\'Action ::\', initial_value)\n}\n```\n\n## Good bye ⏰\n'
-  const c = parse.convertBlocks(txt)
-  t.is(c,
-    '"use strict";\n\n' +
-    "trigger('timer', '*/20 * * * * *', actions);;" +
-    '\n\n"use strict";\n\n' +
-    'function actions(initial_value) {\n  console.log(\'Action ::\', initial_value);\n};'
-  )
 })

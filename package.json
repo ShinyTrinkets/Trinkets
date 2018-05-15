@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "@atom/watcher": "1.x",
-    "@babel/core": "^7.0.0-beta.46",
-    "@babel/preset-env": "^7.0.0-beta.46",
-    "emittery": "^0.3.0",
-    "fs-extra": "^6.0.0",
+    "@babel/core": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "emittery": "0.x",
+    "fs-extra": "6.x",
     "globby": "8.x",
     "gray-matter": "3.x",
     "hapi": "17.x",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "ava": "*",
     "babel-loader": "7.x",
+    "mock-fs": "4.x",
     "node-loader": "0.x",
     "prettier": "1.11.1",
     "standard": "11.0.1",
