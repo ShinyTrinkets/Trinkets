@@ -1,11 +1,10 @@
 
-import fs from 'fs'
 import test from 'ava'
 import mock from 'mock-fs'
-import proj from '../lib/project'
 import parse from '../lib/code'
+import proj from '../lib/project'
 
-test('extracting meta headers', async t => {
+test('project info', async t => {
   mock({
     'source.md': '---\ntrinkets: true\nid: test1\ndb: true\n---\n\n# Hello\n\n'
   })
@@ -15,14 +14,16 @@ test('extracting meta headers', async t => {
     id: 'test1',
     db: true
   })
-  t.is(nfo.content, '\n# Hello\n\n')
   mock.restore()
+  t.is(nfo.content, '\n# Hello\n\n')
 })
 
 test('extracting a js block correctly', t => {
   const txt = '\nx = 1\n\n```js\na = 0\n```\n\ny = 2\n'
   const blks = parse.extractBlocks(txt)
   t.deepEqual(blks, ['js\na = 0'])
+  const code = blks.map(b => parse.convertBlock(b))
+  t.deepEqual(code, ['"use strict";\n\na = 0;;'])
 })
 
 test('extracting json and yaml blocks correctly', t => {
