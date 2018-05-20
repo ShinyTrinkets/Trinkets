@@ -19,9 +19,9 @@ duckduckgo.com: [80, 443]
 And this is the actual code that makes the ping-ing:
 
 ```js
-import __ from 'lodash'
+const __ = require('lodash')
 // This library needs to be installed
-import { portScan } from '@croqaz/port-scan'
+const { portScan } = require('@croqaz/port-scan')
 
 // Run heart-beat every 10 seconds
 trigger('timer', '*/10 * * * * *', () => log.info('Heartbeat ♥️'))
