@@ -16,8 +16,8 @@ This Trinkets example can also be modified to allow for different image sizes, t
 **Note**: This is definitely a rough way of resizing images - because it's a lot of code.
 
 ```js
-import sharp from 'sharp'
+const Jimp = require('jimp')
 
-// const image = sharp('input.jpg')
+// Jimp.read('input.jpg')
 // image.resize(800, 800).toFile('input.jpg')
 ```

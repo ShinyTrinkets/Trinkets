@@ -19,7 +19,7 @@ HOURS: 3
 And the code that does the magic:
 
 ```js
-import fetch from 'node-fetch'
+const fetch = require('node-fetch')
 
 const api = 'https://query.yahooapis.com/v1/public/yql?format=json&u=c&q=' +
   `select * from weather.forecast where woeid in (select woeid from geo.places(1) where text="${options.PLACE}")`

@@ -1,0 +1,26 @@
+{
+  "authors": [
+    "Cristi Constantin <cristi.constantin@live.com>"
+  ],
+  "dependencies": {
+    "@croqaz/port-scan": "^0.3.0",
+    "jimp": "0.x",
+    "node-fetch": "2.x"
+  },
+  "description": "Trinkets examples",
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">=8.8.0"
+  },
+  "keywords": [
+    "🔩",
+    "trinkets",
+    "automation"
+  ],
+  "license": "MIT",
+  "main": "README.md",
+  "name": "@trinkets/examples",
+  "repository": "https://github.com/ShinyTrinkets/Trinkets/examples",
+  "version": "0.0.0"
+}
