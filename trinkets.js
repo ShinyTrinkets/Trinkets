@@ -3,10 +3,9 @@ const path = require('path')
 const minimist = require('minimist')
 const cmdOptions = require('minimist-options')
 
-const log = require('./lib/logs')
 const { convertFolder } = require('./lib/code')
-const { projectInfo } = require('./lib/project')
-const { startProc } = require('./lib/process')
+const pj = require('./lib/project')
+const ps = require('./lib/process')
 
 const options = cmdOptions({
   help: {
@@ -16,10 +15,6 @@ const options = cmdOptions({
   },
   info: {
     alias: 'i',
-    type: 'string'
-  },
-  convert: {
-    alias: 'c',
     type: 'string'
   },
   folder: {
@@ -34,25 +29,24 @@ function main () {
   const args = minimist(process.argv.slice(2), options)
 
   if (args.help) {
-    log.info(process)
-    log.info('Some helpful info ...')
+    console.log('Some helpful info ...')
     return
   }
 
   if (args.info && args.info.length > 0) {
-    projectInfo(args.info).then(console.log)
+    pj.projectInfo(args.info).then(console.log)
     return
   }
 
-  if (args.convert && args.convert.length > 0) {
-    convertFolder(args.convert).then(console.log)
+  if (args['list-sources'] && args['list-sources'].length > 0) {
+    pj.listProjects(args['list-sources']).then(console.log)
     return
   }
 
   if (args.folder || args._.length === 1) {
     let folder = (args.folder || args._)[0]
     folder = str.trimRight(folder, '/') + '/'
-    convertFolder(folder).then(files => files.map(f => startProc(path.parse(f))))
+    convertFolder(folder).then(files => files.map(f => ps.startProc(path.parse(f))))
   }
 }
 

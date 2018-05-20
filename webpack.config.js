@@ -1,7 +1,9 @@
 
+const MinifyPlugin = require("babel-minify-webpack-plugin")
+
 module.exports = {
   target: 'node',
-  entry: './lib/index.js',
+  entry: './trinkets.js',
   output: {
     filename: './tk.bundle.js'
   },
@@ -17,5 +19,8 @@ module.exports = {
         use: 'node-loader'
       }
     ]
-  }
+  },
+  plugins: [
+    new MinifyPlugin({ mangle: false})
+  ]
 };
