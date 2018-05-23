@@ -1,0 +1,34 @@
+{
+  "authors": [
+    "Cristi Constantin <cristi.constantin@live.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
+  },
+  "dependencies": {},
+  "description": "Time and cron parser and runner",
+  "devDependencies": {
+    "ava": "0.x",
+    "human-to-cron": "0.3.1",
+    "ms": "2.1.1"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "keywords": [
+    "🔩",
+    "trinkets",
+    "cron",
+    "timer"
+  ],
+  "license": "MIT",
+  "name": "@trinkets/timers",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ShinyTrinkets/Trinkets/tree/master/packages/timers"
+  },
+  "scripts": {
+    "test": "npx ava --fail-fast --verbose test/*test.js"
+  },
+  "version": "0.0.1"
+}
