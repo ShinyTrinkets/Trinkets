@@ -19,4 +19,4 @@ This will (one day) become a series of helpers to run tasks at specific interval
 * https://github.com/merencia/node-cron - Simple cron-like job scheduler for Node.js
 * https://github.com/kelektiv/node-cron - Cron tasks for Node.js
 * https://github.com/node-schedule/node-schedule - A cron-like and not-cron-like job scheduler for Node.js
-* https://github.com/bunkat/later - Define recurring schedules and calculate future (or past) occurrences for them
+* https://github.com/Grayda/later - Define recurring schedules and calculate future (or past) occurrences for them

@@ -1,4 +1,3 @@
-
 import test from 'ava'
 import ms from 'ms'
 import time from '../lib/timeParse'

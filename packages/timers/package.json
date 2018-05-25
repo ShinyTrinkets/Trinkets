@@ -5,10 +5,14 @@
   "bugs": {
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "later": "git+https://git@github.com/Grayda/later.git",
+    "moment-timezone": "0.5.x"
+  },
   "description": "Time and cron parser and runner",
   "devDependencies": {
     "ava": "0.x",
+    "lodash.range": "3.2.0",
     "ms": "2.1.1"
   },
   "engines": {
