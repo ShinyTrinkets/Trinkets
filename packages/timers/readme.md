@@ -10,7 +10,8 @@ This will (one day) become a series of helpers to run tasks at specific interval
 * https://github.com/lud77/cron-talk - Srammar and parser to process natural language directives about duration and frequency of repeated tasks
 * https://github.com/harrisiirak/cron-parser - Parsing crontab instructions
 
-* https://github.com/bradymholt/cronstrue - Converts Cron expressions into human readable descriptions
+* https://github.com/bradymholt/cronstrue - Convert Cron expressions to human readable descriptions
+* https://github.com/sindresorhus/pretty-ms - Convert milliseconds to human readable string
 
 * https://github.com/azer/english-time - Parse times written in simple English to unix time
 * https://github.com/zeit/ms - Tiny milisecond conversion utility

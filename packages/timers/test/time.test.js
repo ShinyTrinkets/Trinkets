@@ -10,6 +10,11 @@ test('numbers', t => {
   t.is(time(-9.9), -9.9)
 })
 
+test('numeric strings', t => {
+  t.is(time('1234'), 1234)
+  t.is(time('0'), 0)
+})
+
 test('expressions', t => {
   t.is(time('1 millisecond'), 1)
   t.is(time('9 milliseconds'), 9)
@@ -47,6 +52,7 @@ test('float decimals ignored', t => {
 })
 
 test('weird patterns', t => {
+  // t.is(time('3.14'), 3) // undefined
   t.is(time('every 1 millisecond'), 1)
   t.is(time('2 min or 2 sec'), ms('2min') + ms('2sec'))
   t.is(time('foo, bar12 a3m 1 milliseconds + 5ms + 4ms hello world'), 10)

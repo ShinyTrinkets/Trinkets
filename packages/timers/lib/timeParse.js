@@ -3,7 +3,7 @@
  * https://github.com/azer/english-time
  */
 
-const enUnits = require('./units')
+const enUnits = require('./timeUnits')
 
 const reOne = /(\d+(?:\.\d+)?)\s?(\w+)/
 
@@ -14,6 +14,10 @@ function reAll () {
 function findAll (input, units = enUnits) {
   if (typeof input === 'number') {
     return input
+  }
+
+  if (/^\d+$/.test(input)) {
+    return parseInt(input)
   }
 
   let match
