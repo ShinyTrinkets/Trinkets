@@ -69,5 +69,5 @@
     "lint": "npx standard lib/**/*.js",
     "test": "npx ava --fail-fast --serial --verbose test/*.test.js"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
