@@ -3,7 +3,7 @@
     "Cristi Constantin <cristi.constantin@live.com>"
   ],
   "bin": {
-    "trinkets": "./lib/index.js"
+    "trinkets": "./trinkets.js"
   },
   "bugs": {
     "url": "https://github.com/ShinyTrinkets/Trinkets/issues"
@@ -35,14 +35,15 @@
   },
   "description": "Software automation made for Humans™",
   "devDependencies": {
-    "@babel/core": "^7.0.0-beta.47",
-    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/core": "7.0.0-beta.49",
+    "@babel/preset-env": "7.0.0-beta.49",
     "ava": "*",
-    "babel-loader": "^8.0.0-beta.3",
+    "babel-loader": "8.0.0-beta.3",
     "babel-minify-webpack-plugin": "0.x",
+    "lerna": "2.11.0",
     "mock-fs": "4.x",
     "node-loader": "0.x",
-    "prettier": "1.12.1",
+    "prettier": "1.13.0",
     "standard": "11.0.1",
     "webpack": "4.x",
     "webpack-cli": "2.x"

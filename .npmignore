@@ -1,0 +1,6 @@
+.npmrc
+.npmignore
+.editorconfig
+.gitignore
+.babelrc
+.prettierrc

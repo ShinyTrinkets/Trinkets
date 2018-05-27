@@ -23,3 +23,10 @@ test('every 10 units', t => {
   t.deepEqual(later.parse.text('every 10 hours').schedules[0], { h: range(0, 24, 10) })
   t.deepEqual(later.parse.text('every 10 days').schedules[0], { D: range(1, 32, 10) })
 })
+
+test('weekdays', t => {
+  t.deepEqual(later.parse.text('every weekday').schedules[0], { d: [2, 3, 4, 5, 6] })
+  t.deepEqual(later.parse.text('every weekend').schedules[0], { d: [1, 7] })
+  t.deepEqual(later.parse.text('every 2nd day of the week').schedules[0], { d: [1, 3, 5, 7] })
+  // t.deepEqual(later.parse.text('every monday').schedules[0], {})
+})
