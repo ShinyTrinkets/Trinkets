@@ -9,6 +9,7 @@ This will (one day) become a series of helpers to run tasks at specific interval
 * https://github.com/rainder/human-to-cron - Convert human readable expressions to cron strings
 * https://github.com/lud77/cron-talk - Srammar and parser to process natural language directives about duration and frequency of repeated tasks
 * https://github.com/harrisiirak/cron-parser - Parsing crontab instructions
+* https://github.com/wanasit/chrono - Natural language date parser in Javascript
 
 * https://github.com/bradymholt/cronstrue - Convert Cron expressions to human readable descriptions
 * https://github.com/sindresorhus/pretty-ms - Convert milliseconds to human readable string

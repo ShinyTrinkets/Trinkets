@@ -25,7 +25,6 @@ test('expressions', t => {
   t.is(time('1 Hour'), ms('1min') * 60)
   t.is(time('2 Hours'), ms('1h') * 2)
   t.is(time('3 WEEKS'), ms('1w') * 3)
-  t.is(time('9 months'), ms('31d') * 9) // weird
 
   t.is(time('1s + 1s'), 2000)
   t.is(time('1s & 1s'), 2000)
@@ -42,16 +41,16 @@ test('expressions', t => {
   t.is(time('2 Hours, 5 Minutes and 15 Seconds'), 7515000)
 
   t.is(time('20H 5M 15S'), ms('20h') + ms('5min') + ms('15sec'))
-  t.is(time('2 mon, 1 week, 3 days'), time('2mon') + ms('1w') + ms('3d'))
+  t.is(time('1 week, 3 days, 4h'), ms('1w') + ms('3d') + ms('4h'))
 })
 
 test('float decimals ignored', t => {
-  t.is(time('1.5h'), ms('1h'))
-  t.is(time('3.1m'), ms('3m'))
+  t.is(time('1.5h'), ms('1.5h'))
+  t.is(time('3.1m'), ms('3.1m'))
+  t.is(time('3.14'), 3.14)
 })
 
 test('weird patterns', t => {
-  // t.is(time('3.14'), 3) // undefined
   t.is(time('every 1 millisecond'), 1)
   t.is(time('2 min or 2 sec'), ms('2min') + ms('2sec'))
   t.is(time('foo, bar12 a3m 1 milliseconds + 5ms + 4ms hello world'), 10)

@@ -3,15 +3,13 @@
  * https://github.com/azer/english-time
  */
 
-const enUnits = require('./timeUnits')
-
-const reOne = /(\d+(?:\.\d+)?)\s?(\w+)/
+const ms = require('ms')
 
 function reAll () {
   return /(\d+(?:\.\d+)?\s*\w+)/g
 }
 
-function findAll (input, units = enUnits) {
+function findAll (input) {
   if (typeof input === 'number') {
     return input
   }
@@ -38,7 +36,7 @@ function findAll (input, units = enUnits) {
 
   let i = all.length
   while (i--) {
-    all[i] = findOne(all[i], units)
+    all[i] = ms(all[i])
   }
 
   all = all.filter(isNotNil)
@@ -52,18 +50,6 @@ function findAll (input, units = enUnits) {
 
 function isNotNil (el) {
   return !!el
-}
-
-function findOne (input, units) {
-  let matching, n, unit
-
-  matching = input.split(reOne)
-  n = matching[1]
-  unit = matching[2]
-
-  if (!units[unit]) return
-
-  return units[unit](parseInt(n))
 }
 
 module.exports = findAll
