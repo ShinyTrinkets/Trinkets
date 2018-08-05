@@ -13,6 +13,7 @@ This will (one day) become a series of helpers to run tasks at specific interval
 
 * https://github.com/bradymholt/cronstrue - Convert Cron expressions to human readable descriptions
 * https://github.com/sindresorhus/pretty-ms - Convert milliseconds to human readable string
+* https://github.com/agenda/human-interval - Human readable time distances for Javascript
 
 * https://github.com/azer/english-time - Parse times written in simple English to unix time
 * https://github.com/zeit/ms - Tiny milisecond conversion utility
